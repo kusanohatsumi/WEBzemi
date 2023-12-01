@@ -19,8 +19,8 @@ h2 {
   height: 50px;
   display: flex;
   align-items: center;
-  font-size: clamp(1.6rem, 4.2vw, 2.4rem);
-  line-height: clamp(1.6rem, 4.2vw, 2.4rem);
+  font-size: clamp(1.2rem, 3.2vw, 2rem);
+  line-height: clamp(1.2rem, 3.2vw, 2rem);
 
   padding: 0 16px;
   color: #fff;
@@ -39,11 +39,18 @@ h3 {
 }
 
 .container {
-  max-width: 980px;
+  max-width: 100vw;
   width: auto;
-  margin: 16px;
+  margin: 24px;
   padding-bottom: 16px;
+  counter-increment: num;
 }
+
+.container > h2::before {
+  content: "0" counter(num) ".";
+  padding-right: 16px;
+}
+
 .contents {
   width: auto;
   padding: 16px;
@@ -53,21 +60,47 @@ h3 {
   margin: 8px 0;
   padding: 0 16px;
   width: auto;
-  line-height: 50px;
+  box-sizing: border-box;
+  line-height: 100px;
   background-color: #75c2f6;
   font-weight: bold;
 }
 .box1 {
-  width: 500px;
+  width: 980px;
+  background-color: skyblue;
 }
 .box2 {
-  max-width: 500px;
+  max-width: 980px;
+  background-color: steelblue;
+}
+
+/* コンテナクエリ */
+.cq {
+  /* 要素をコンテナにする */
+  /* container-type: inline-size;  インライン方向のサイズに応じる*/
+  /* container-type: size;         インライン方向・ブロック方向のサイズに応じる */
+  container-type: inline-size;
+}
+.box3,
+.box4 {
+  width: auto;
+  background-color: #ccc;
+}
+@media (max-width: 768px) {
+  .box3 {
+    background-color: pink;
+  }
+}
+@container (max-width:768px) {
+  .box4 {
+    background-color: palevioletred;
+  }
 }
 
 .widthItem {
   margin: 8px 0;
-  padding: 0 16px;
-  line-height: 50px;
+  padding: 0 32px;
+  line-height: 100px;
   background-color: #75c2f6;
   font-weight: bold;
 }

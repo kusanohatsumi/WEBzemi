@@ -10,19 +10,29 @@
     <div class="wrapper">
       <h1>レスポンシブ</h1>
       <div class="container">
+        <h2>width:100% , width:auto</h2>
+        <div class="contents width">
+          <h3>の違い（左右にパディングを「32px」つけた場合）</h3>
+          <div class="widthItem full">width:100%</div>
+          <div class="widthItem auto">width:auto</div>
+        </div>
+      </div>
+      <div class="container">
         <h2>レスポンシブ</h2>
         <div class="contents">
-          <h3>タイトル</h3>
+          <h3>・width : 980pxの場合</h3>
           <div class="box box1">box1</div>
+          <h3>・max-width : 980pxに設定した場合</h3>
           <div class="box box2">box2</div>
         </div>
       </div>
       <div class="container">
-        <h2>width:100% , width:auto の違い</h2>
-        <div class="contents width">
-          <h3>左右にパディングを「16px」つけた場合</h3>
-          <div class="widthItem full">width:100%</div>
-          <div class="widthItem auto">width:auto</div>
+        <h2>コンテナクエリ（ブレークポイント:768px）</h2>
+        <div class="contents cq">
+          <h3>・メディアクエリ</h3>
+          <div class="box box3">box3</div>
+          <h3>・コンテナクエリ</h3>
+          <div class="box box4">box4</div>
         </div>
       </div>
     </div>
